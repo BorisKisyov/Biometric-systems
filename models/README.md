@@ -17,4 +17,3 @@ AUTO_DOWNLOAD_MODELS=1, or manually through:
 - `python -m app.download_models`
 - `powershell -ExecutionPolicy Bypass -File .\scripts\setup-local.ps1`
 
-These binary weight files are intentionally not committed to GitHub.
