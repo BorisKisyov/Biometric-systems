@@ -1,0 +1,8 @@
+fingerflow==3.0.1
+gradio==4.44.1
+gdown==5.2.0
+huggingface_hub==0.25.2
+pydantic==2.10.6
+tensorflow==2.12.0
+keras==2.12.0
+numpy==1.23.5

@@ -1,0 +1,16 @@
+services:
+  fingerprint-demo:
+    build:
+      context: .
+    ports:
+      - "7860:7860"
+    environment:
+      AUTO_DOWNLOAD_MODELS: "1"
+      MODEL_DIR: /app/models
+      DATA_DIR: /app/data
+      PORT: "7860"
+      MATCH_THRESHOLD: "0.70"
+      FINGERPRINT_PRECISION: "30"
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
