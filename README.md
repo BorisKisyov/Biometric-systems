@@ -131,38 +131,7 @@ Performance tips:
 - repeated comparisons of the same uploaded images are faster because extracted
   candidates are cached in memory
 
-## Push this project to GitHub
 
-Do **not** upload the downloaded model files through the GitHub website.
-They are too large and they do not belong in source control.
-
-If your local branch already contains those files in a commit, the cleanest fix
-is to rebuild the local `main` branch from `origin/main` while keeping your
-current working tree files:
-
-```powershell
-git fetch origin
-git reset --mixed origin/main
-git add .gitignore README.md Dockerfile docker-compose.yml entrypoint.sh requirements.txt app data models\README.md scripts
-git commit -m "Add fingerprint verification demo without model weights"
-git push origin main
-```
-
-Why these commands work:
-
-- `git reset --mixed origin/main` moves your branch pointer back to the current
-  remote branch without deleting your local files
-- `git add ...` stages the project files again
-- the new `.gitignore` prevents `models/` weights from being added
-- the new commit no longer contains the oversized binary files
-
-If you prefer, you can first inspect what will be committed with:
-
-```powershell
-git status
-```
-
-## Sources used
 
 - FingerFlow README: https://github.com/jakubarendac/fingerflow
 - FingerFlow package: https://pypi.org/project/fingerflow/
