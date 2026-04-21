@@ -16,25 +16,6 @@ The UI includes two comparison modes:
 - `Fast` for quicker testing
 - `Accurate` for rotation-aware matching
 
-## Important note about the model files
-
-The large pretrained weights are **not supposed to be committed to GitHub**.
-They are downloaded automatically when the app starts in Docker, or manually via
-the provided local setup script.
-
-The `models/` folder is intentionally ignored by Git except for
-`models/README.md`.
-
-Why:
-
-- GitHub rejects some of the model files because they are too large
-- the files are downloaded artifacts, not source code
-- keeping them out of the repository makes cloning and pushing much easier
-
-If you really want to version large binary model files, use Git LFS. For this
-project that is unnecessary because the downloader already fetches the exact
-weights.
-
 ## Requirements
 
 The local Python setup uses these package versions:
